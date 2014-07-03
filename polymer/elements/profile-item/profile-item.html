@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="profile-item" noscript>
+  <template>
+  	<style>
+	:host { 
+		width: 200px;
+		min-height: 200px;
+		float: left;
+		padding: 10px;
+		margin: 10px;
+		background: #fff;
+		border-radius: 3px;
+	}
+
+	img {
+		text-align: center;
+		border-radius: 50%;
+	}
+
+	.center {
+		text-align: center;
+	}
+	</style>
+
+  	<div class="center">
+  		<content select="img"></content>
+	  	<content select="h2"></content>
+	  	<content select="h3"></content>
+	</div>
+
+    <content></content>
+  </template>
+</polymer-element>

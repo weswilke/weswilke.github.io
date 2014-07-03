@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../post-service/post-service.html">
+
+
+<polymer-element name="profile-list" attributes="show">
+  <template>
+    <style>
+    :host { 
+      display: block;
+      width: 100%;
+    }
+    </style>
+    
+    <!-- add markup here -->
+    <post-service id="service" posts="{{posts}}">
+    </post-service>
+    <div layout vertical center>
+      <template repeat="{{post in posts}}">
+        <profile-item>
+          <img src="{{post.pic}}" width="125" height="125">
+          <h2>{{post.name}}</h2>
+          <h3>{{post.title}}</h3>
+          {{post.description}}
+        </profile-item>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({
+    addPerson: function(person) { //New entry
+      console.log('adding '+person.name+' to data list...');
+      this.posts.push(person);
+      console.log('done.');
+    }
+  });
+  </script>
+
+</polymer-element>

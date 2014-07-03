@@ -1,0 +1,22 @@
+{
+  "name": "Polymer Test",
+  "version": "0.0.0",
+  "authors": [
+    "Wes Wilke <wwilke@fossil.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "core-ajax": "Polymer/core-ajax#~0.3.3",
+    "paper-elements": "Polymer/paper-elements#~0.3.3"
+  }
+}
