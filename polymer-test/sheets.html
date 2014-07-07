@@ -8,19 +8,14 @@
   </head>
   <body>
 
-    <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com" rows="{{rows}}">
-    </google-sheets>
+    <template is="auto-binding">
+      <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com" rows="{{rows}}">
+      </google-sheets>
 
-    Rows2:
-    <template id="rows" bind>
-
-        <h5><template repeat="{{rows.name}}">{{name}} </template></h5>
-      </heading>
-      <ul>
-        <template repeat="{{rows}}">
-          <li>Name: {{gsx$name.$t}} ( lat: {{gsx$lat.$t}}, lng: {{gsx$lng.$t}} )</li>
-        </template>
-      </ul>
+      Rows3:
+      <template repeat="{{row in rows}}">
+        Name: {{row.gsx$Name.$t}}, name: {{row.gsx$name.$t}}
+      </template>
     </template>
 
 
