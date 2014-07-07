@@ -1,0 +1,38 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/x-meme/x-meme.html">
+
+<polymer-element name="meme-list">
+  <template>
+    <template repeat="{{meme in memes}}">
+      <img src="http://karan.github.io/x-meme/components/x-meme/images/{{meme}}.jpg">
+      <x-meme src="http://karan.github.io/x-meme/components/x-meme/images/ancientaliens.jpg"></x-meme>
+    </template>
+  </template>
+  <script>
+    Polymer('meme-list', {
+      ready: function() { 
+        this.memes = [
+          "ancientaliens",
+          "batmanslappingrobin",
+          "braceyourselves",
+          "doge",
+          "facepalm",
+          "firstworldproblems",
+          "futuramafry",
+          "grumpycat",
+          "idontalways",
+          "laughingmen",
+          "onesimplydoesnot",
+          "picard",
+          "scumbagsteve",
+          "successkid",
+          "thatwouldbegreat",
+          "toodamnhigh",
+          "wonka",
+          "yaoming",
+          "yuno"
+        ];
+      }
+    });
+  </script>
+</polymer-element>

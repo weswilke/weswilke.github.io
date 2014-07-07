@@ -29,10 +29,12 @@
       <h2><paper-input name="name" value="{{person.name}}" label="Your Name"></paper-input></h2>
       <h3><paper-input name="title" value="{{person.title}}" label="Your Awesome Title"></paper-input></h3>
       <paper-input name="description" value="{{person.description}}" label="Write something about you"></paper-input>
+      <input type="file" value="{{person.pic}}"><br /><br />
       <paper-button raisedButton colored="#fff" on-click="{{addPerson}}">Submit</paper-button>
     </profile-item>
 
-    <!-- <name-tag person="{{person}}"></name-tag> -->
+    <h3>Preview</h3>
+    <name-tag person="{{person}}"></name-tag>
 
     <profile-list id="service" posts="{{posts}}">
     </profile-list>

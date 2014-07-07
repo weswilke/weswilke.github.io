@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../post-service/post-service.html">
+<link rel="import" href="../edit-button/edit-button.html">
 
 
 <polymer-element name="profile-list" attributes="show">
@@ -17,6 +18,7 @@
     <div layout vertical center>
       <template repeat="{{post in posts}}">
         <profile-item>
+          <edit-button person="{{post}}"></edit-button>
           <img src="{{post.pic}}" width="125" height="125">
           <h2>{{post.name}}</h2>
           <h3>{{post.title}}</h3>
@@ -27,7 +29,7 @@
   </template>
 
   <script>
-  Polymer({
+  Polymer('profile-list', {
     addPerson: function(person) { //New entry
       console.log('adding '+person.name+' to data list...');
       this.posts.push(person);

@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="edit-button" attributes="person">
+  <template>
+    <style>
+    :host { 
+      position: absolute;
+      top: 3px;
+      right: 3px;
+    }
+    </style>
+    
+    <!-- add markup here -->
+    <a href="#edit" on-click="{{edit}}">Edit</a>
+  </template>
+
+
+
+  <script>
+    Polymer('edit-button', {
+      person: {},
+      edit: function(e, detail, sender) {
+        e.preventDefault();
+
+        var person = sender.templateInstance.model.person;
+
+        console.log('editing '+person.name);
+
+      }
+    });
+  </script>
+
+</polymer-element>

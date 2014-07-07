@@ -1,0 +1,22 @@
+{
+  "name": "polymer-test",
+  "version": "0.0.0",
+  "homepage": "https://github.com/weswilke/weswilke.github.io",
+  "authors": [
+    "Wes Wilke <wwilke@fossil.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.3"
+  },
+  "devDependencies": {
+    "google-sheets": "~0.0.2"
+  }
+}

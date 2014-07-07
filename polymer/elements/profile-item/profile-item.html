@@ -6,16 +6,25 @@
 	:host { 
 		width: 200px;
 		min-height: 200px;
+		position: relative;
 		float: left;
 		padding: 10px;
 		margin: 10px;
 		background: #fff;
 		border-radius: 3px;
 	}
+	:host:hover .edit { display: block; }
 
 	img {
 		text-align: center;
 		border-radius: 50%;
+	}
+
+	.edit {
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		display: none;
 	}
 
 	.center {

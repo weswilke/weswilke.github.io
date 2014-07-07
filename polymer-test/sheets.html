@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 1. Load platform.js for polyfill support. -->
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/google-sheets/google-sheets.html">
+
+  </head>
+  <body>
+
+    <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0"></google-sheets>
+
+    <script>
+      var sheet = document.querySelector('google-sheets');
+
+      sheet.addEventListener('google-sheet-data', function(e) {
+       // this.spreadsheets - list of the user's spreadsheets
+       // this.tab - information on the tab that was fetched
+       // this.rows - cell row information for the tab that was fetched
+      });
+
+      sheet.addEventListener('core-error', function(e) {
+       // e.detail.response
+      });
+    </script>
+  </body>
+</html>
