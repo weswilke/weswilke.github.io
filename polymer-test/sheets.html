@@ -7,10 +7,16 @@
 
   </head>
   <body>
-a
-    <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com">
+
+    <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com" rows="{{rows}}">
     </google-sheets>
-b
+
+    Rows:
+    <template repeat="{{row in rows}}">
+      {{row}}
+    </template>
+
+
     <script>
       var sheet = document.querySelector('google-sheets');
 
