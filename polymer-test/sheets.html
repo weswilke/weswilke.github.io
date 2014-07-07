@@ -12,9 +12,19 @@
       <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="0" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com" rows="{{rows}}">
       </google-sheets>
 
-      Rows3:
+      Men:
       <template repeat="{{row in rows}}">
-        Name: {{row.gsx$Name.$t}}, name: {{row.gsx$name.$t}}
+        <div>{{row.gsx$name.$t}}</div>
+      </template>
+    </template>
+
+    <template is="auto-binding">
+      <google-sheets key="1F95PI-UVw2pP8CtIKcHw2EYl9iVsBeHktwZlFTe8cnU" gid="1" clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com" rows="{{rows}}">
+      </google-sheets>
+
+      Women:
+      <template repeat="{{row in rows}}">
+        <div>{{row.gsx$name.$t}}</div>
       </template>
     </template>
 
