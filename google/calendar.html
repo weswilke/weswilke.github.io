@@ -51,9 +51,12 @@
             var heading = document.createElement('h4');
             var image = document.createElement('img');
             image.src = resp.image.url;
+            
+            
+            heading.appendChild(document.createTextNode(resp.displayName));
+
             output.appendChild(heading);
             output.appendChild(image);
-            output.appendChild(document.createTextNode(resp.displayName));
 
             document.getElementById('content').appendChild(output);
           });
