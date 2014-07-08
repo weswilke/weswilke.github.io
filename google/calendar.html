@@ -1,12 +1,14 @@
     <!--Add a button for the user to click to initiate auth sequence -->
     <button id="authorize-button" style="visibility: hidden">Authorize</button>
+    <div id="content"></div>
+    
     <script type="text/javascript">
 
       var clientId = '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com';
 
       var apiKey = 'AIzaSyCyLTYXmBZdkup8aLSePNU-l9wQ-GM3A-4';
 
-      var scopes = 'https://www.googleapis.com/auth/calendar';
+      var scopes = 'https://www.googleapis.com/auth/plus.me';
 
       function handleClientLoad() {
         // Step 2: Reference the API key
