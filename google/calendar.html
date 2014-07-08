@@ -53,10 +53,11 @@
             image.src = resp.image.url;
             
             var title = document.createElement('h5');
+            var company = document.createElement('h5');
 
             heading.appendChild(document.createTextNode(resp.displayName));
             title.appendChild(document.createTextNode(resp.occupation));
-            title.appendChild(document.createTextNode(resp.organizations[0].name));
+            company.appendChild(document.createTextNode(resp.organizations[0].name));
 
             output.appendChild(heading);
             output.appendChild(title);
