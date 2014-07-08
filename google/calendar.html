@@ -52,12 +52,15 @@
             var image = document.createElement('img');
             image.src = resp.image.url;
             
-            
+            var title = document.createElement('h5');
+
             heading.appendChild(document.createTextNode(resp.displayName));
-            heading.appendChild(document.createTextNode(resp.occupation));
-            heading.appendChild(document.createTextNode(resp.organizations[0].name));
+            title.appendChild(document.createTextNode(resp.occupation));
+            title.appendChild(document.createTextNode(resp.organizations[0].name));
 
             output.appendChild(heading);
+            output.appendChild(title);
+            output.appendChild(company);
             output.appendChild(image);
 
             var data = document.createElement("div");
