@@ -54,6 +54,8 @@
             
             
             heading.appendChild(document.createTextNode(resp.displayName));
+            heading.appendChild(document.createTextNode(resp.occupation));
+            heading.appendChild(document.createTextNode(resp.organizations[0].name));
 
             output.appendChild(heading);
             output.appendChild(image);
