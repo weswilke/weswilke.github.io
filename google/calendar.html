@@ -58,7 +58,11 @@
             output.appendChild(heading);
             output.appendChild(image);
 
+            var data = document.createElement("div");
+            data.appendChild(document.createTextNode(JSON.stringify(resp)));
+
             document.getElementById('content').appendChild(output);
+            document.getElementById('content').appendChild(data);
           });
         });
       }
