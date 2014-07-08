@@ -3,11 +3,14 @@
 
 <polymer-element name="meme-list">
   <template>
-    <template repeat="{{meme in memes}}">
-      <img src="http://karan.github.io/x-meme/components/x-meme/images/{{meme}}.jpg">
-      <x-meme src="http://weswilke.github.io/polymer-test/{{meme}}.jpg"></x-meme>
-    </template>
+
+    <select id="meme-select" selected="{{selected}}">
+      <template repeat="{{meme in memes}}">
+        <option>{{meme}}</option>
+      </template>
+    </select>
   </template>
+
   <script>
     Polymer('meme-list', {
       ready: function() { 
@@ -32,6 +35,8 @@
           "yaoming",
           "yuno"
         ];
+
+        this.selected = "0";
       }
     });
   </script>

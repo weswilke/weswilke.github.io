@@ -17,6 +17,7 @@
     "polymer": "Polymer/polymer#~0.3.3"
   },
   "devDependencies": {
-    "google-sheets": "~0.0.2"
+    "google-sheets": "~0.0.2",
+    "google-calendar": "GoogleWebComponents/google-calendar#~0.0.2"
   }
 }
