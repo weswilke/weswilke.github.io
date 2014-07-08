@@ -59,13 +59,14 @@
             title.appendChild(document.createTextNode(resp.occupation));
             company.appendChild(document.createTextNode(resp.organizations[0].name));
 
+            output.appendChild(image);
             output.appendChild(heading);
             output.appendChild(title);
             output.appendChild(company);
-            output.appendChild(image);
+            
 
             var data = document.createElement("div");
-            data.appendChild(document.createTextNode(JSON.stringify(resp)));
+            //data.appendChild(document.createTextNode(JSON.stringify(resp)));
 
             document.getElementById('content').appendChild(output);
             document.getElementById('content').appendChild(data);
