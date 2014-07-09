@@ -1,86 +1,121 @@
-<polymer-element name="google-plus" noscript>
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../profile-item/profile-item.html">
+<link rel="import" href="../get-google-plus/get-google-plus.html">
 
-  <template>
+<polymer-element name="google-plus" attributes="person">
 
-    <!--Add a button for the user to click to initiate auth sequence -->
-    <button id="authorize-button" style="visibility: hidden">Authorize</button>
-    <div id="content"></div>
+    <template>
+      <!--
+      <profile-item attributes="person">
+        <img src="{{person.image}}">
+        <h2>{{person.name}}</h2>
+        <h3>{{person.title}}</h3>
+        {{person.description}}
+      </profile-item>
+
+      <content></content>
+    -->
+    </template>
 
     <script type="text/javascript">
-
-      var clientId = '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com';
-
-      var apiKey = 'AIzaSyCyLTYXmBZdkup8aLSePNU-l9wQ-GM3A-4';
-
-      var scopes = 'https://www.googleapis.com/auth/plus.me';
-
-      function handleClientLoad() {
-        // Step 2: Reference the API key
-        gapi.client.setApiKey(apiKey);
-        window.setTimeout(checkAuth,1);
-      }
-
-      function checkAuth() {
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
-      }
-
-      function handleAuthResult(authResult) {
-        var authorizeButton = document.getElementById('authorize-button');
-        if (authResult && !authResult.error) {
-          authorizeButton.style.visibility = 'hidden';
-          makeApiCall();
-        } else {
-          authorizeButton.style.visibility = '';
-          authorizeButton.onclick = handleAuthClick;
+      var fakeData = {
+        "kind": "plus#person",
+        "etag": "\"goGJzLGpDAdTIjyZUs7et8jwqfg\/tXdH_NVjnkdDgSBJ1gXnaC7JG5M\"",
+        "occupation": "Web Develolper",
+        "gender": "male",
+        "urls": [
+          {
+            "value": "http:\/\/picasaweb.google.com\/109871022025098505330",
+            "type": "otherProfile",
+            "label": "Picasa Web Albums"
+          },
+          {
+            "value": "https:\/\/profiles.google.com\/109871022025098505330\/buzz",
+            "type": "contributor",
+            "label": "Buzz"
+          }
+        ],
+        "objectType": "person",
+        "id": "109871022025098505330",
+        "displayName": "Wes Wilke",
+        "name": {
+          "familyName": "Wilke",
+          "givenName": "Wes"
+        },
+        "url": "https:\/\/plus.google.com\/109871022025098505330",
+        "image": {
+          "url": "https:\/\/lh6.googleusercontent.com\/-lXK2E41-_80\/AAAAAAAAAAI\/AAAAAAAAByU\/MEfeYVaEDIo\/photo.jpg?sz=50"
+        },
+        "organizations": [
+          {
+            "name": "Fossil, Inc.",
+            "type": "work",
+            "primary": true
+          }
+        ],
+        "isPlusUser": true,
+        "circledByCount": 34,
+        "verified": false,
+        "result": {
+          "kind": "plus#person",
+          "etag": "\"goGJzLGpDAdTIjyZUs7et8jwqfg\/tXdH_NVjnkdDgSBJ1gXnaC7JG5M\"",
+          "occupation": "Web Develolper",
+          "gender": "male",
+          "urls": [
+            {
+              "value": "http:\/\/picasaweb.google.com\/109871022025098505330",
+              "type": "otherProfile",
+              "label": "Picasa Web Albums"
+            },
+            {
+              "value": "https:\/\/profiles.google.com\/109871022025098505330\/buzz",
+              "type": "contributor",
+              "label": "Buzz"
+            }
+          ],
+          "objectType": "person",
+          "id": "109871022025098505330",
+          "displayName": "Wes Wilke",
+          "name": {
+            "familyName": "Wilke",
+            "givenName": "Wes"
+          },
+          "url": "https:\/\/plus.google.com\/109871022025098505330",
+          "image": {
+            "url": "https:\/\/lh6.googleusercontent.com\/-lXK2E41-_80\/AAAAAAAAAAI\/AAAAAAAAByU\/MEfeYVaEDIo\/photo.jpg?sz=50"
+          },
+          "organizations": [
+            {
+              "name": "Fossil, Inc.",
+              "type": "work",
+              "primary": true
+            }
+          ],
+          "isPlusUser": true,
+          "circledByCount": 34,
+          "verified": false
         }
-      }
+      };
 
-      function handleAuthClick(event) {
-        // Step 3: get authorization to use private data
-        gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
-        return false;
-      }
 
-      // Load the API and make an API call.  Display the results on the screen.
-      function makeApiCall() {
-        // Step 4: Load the Google+ API
-        gapi.client.load('plus', 'v1', function() {
-          // Step 5: Assemble the API request
-          var request = gapi.client.plus.people.get({
-            'userId': 'me'
-          });
-          // Step 6: Execute the API request
-          request.execute(function(resp) {
-            var output = document.createElement("div");
-            var heading = document.createElement('h4');
-            var image = document.createElement('img');
-            image.src = resp.image.url;
-            
-            var title = document.createElement('h5');
-            var company = document.createElement('h5');
+      Polymer('google-plus', {
+        ready: function() {
+          this.person = {
+            image: fakeData.image.url,
+            name: fakeData.displayName,
+            title: fakeData.occupation,
+            description: fakeData.organizations[0].name
+          };
+        },
+        getProfile: function() {
+          this.person = this.$.gData;
 
-            heading.appendChild(document.createTextNode(resp.displayName));
-            title.appendChild(document.createTextNode(resp.occupation));
-            company.appendChild(document.createTextNode(resp.organizations[0].name));
+          return this.person;
+        }
 
-            output.appendChild(image);
-            output.appendChild(heading);
-            output.appendChild(title);
-            output.appendChild(company);
-            
 
-            var data = document.createElement("div");
-            //data.appendChild(document.createTextNode(JSON.stringify(resp)));
-
-            document.getElementById('content').appendChild(output);
-            document.getElementById('content').appendChild(data);
-          });
-        });
-      }
+        //Get data here with id: gData
+      });
     </script>
 
-    <!-- Step 1:  Load the Google API (js) with onload handler -->
-    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-
-  </template>
 </polymer-element>
