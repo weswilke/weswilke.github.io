@@ -49,7 +49,7 @@
     </profile-list>
 
     <get-google-plus id="gData" person="{{person}}"></get-google-plus>
-
+    <get-google-plus id="fetch" person="{{person}}"></get-google-plus>
 
     
 
@@ -73,7 +73,8 @@
         }; //Reset object for new entry
       },
       useGoogle: function(event, detail, sender) { 
-        this.person = this.$.gData.getProfile(); //dont fetch data every time - move globally
+        //this.person = this.$.gData.getProfile(); //dont fetch data every time - move globally
+        this.person = this.$.fetch.fetchData();
       },
       useMyOwn: function() { 
         this.person = {};
