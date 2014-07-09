@@ -17,6 +17,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="elements/profile-editor/profile-editor.html">
   <link rel="import" href="elements/profile-list/profile-list.html">
 
+  <script src="https://apis.google.com/js/client.js"></script>
+<script>
+  function auth() {
+    var config = {
+      'client_id': '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com',
+      'scope': 'https://www.googleapis.com/auth/plus.me'
+    };
+    gapi.auth.authorize(config, function() {
+      console.log('login complete');
+      console.log(gapi.auth.getToken());
+    });
+  }
+</script>
+
+    
+
 
   <style>
   	body { background: #ddd; }
@@ -25,6 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved>
 
+	<button onclick="auth();">Authorize</button>
 
  	<profile-editor></profile-editor>
 
