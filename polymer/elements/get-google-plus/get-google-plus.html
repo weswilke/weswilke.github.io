@@ -4,10 +4,10 @@
 <polymer-element name="get-google-plus" attributes="person">
   <template>
     <style>
-    :host {
-      display: none;
-    }
+    
     </style>
+
+    <button id="authorize-button" style="visibility: hidden">Authorize</button>
 
     <core-ajax id="ajax"
       auto
@@ -43,8 +43,8 @@
     }
   });
 
-
-  var clientId = '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com';
+  /*
+    var clientId = '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com';
 
     var apiKey = 'AIzaSyCyLTYXmBZdkup8aLSePNU-l9wQ-GM3A-4';
 
@@ -113,6 +113,7 @@
         });
       });
     }
+    */
   </script>
   <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 </polymer-element>
