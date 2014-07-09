@@ -47,7 +47,7 @@
 
       var scopes = 'https://www.googleapis.com/auth/plus.me';
 
-      function handleClientLoad() {
+      function handleClientLoad() { alert('handle client load');
         // Step 2: Reference the API key
         gapi.client.setApiKey(apiKey);
         window.setTimeout(checkAuth,1);
