@@ -11,7 +11,8 @@
 
     <core-ajax id="ajax"
       auto
-      url="../api/google.json"
+      url="https://www.googleapis.com/auth/plus.me",
+      params={"clientId":"938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com", "apikey":"AIzaSyCyLTYXmBZdkup8aLSePNU-l9wQ-GM3A-4"},
       on-core-response="{{personLoaded}}"
       handleAs="json">
     </core-ajax>
