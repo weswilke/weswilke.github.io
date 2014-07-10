@@ -1,5 +1,5 @@
 {
-  "name": "core-shared-lib",
+  "name": "polymer-signals",
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master"

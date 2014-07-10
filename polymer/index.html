@@ -16,6 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="elements/profile-item/profile-item.html">
   <link rel="import" href="elements/profile-editor/profile-editor.html">
   <link rel="import" href="elements/profile-list/profile-list.html">
+  <link rel="import" href="bower_components/google-signin/google-signin.html">
 
 
     
@@ -28,7 +29,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved>
 
-
+	<google-signin 
+		clientId="938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com"
+		scopes="https://www.googleapis.com/auth/plus.me"
+		></google-signin>
  	<profile-editor></profile-editor>
 
  	<button id="authorize-button" style="visibility: hidden">Authorize</button>
