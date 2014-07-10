@@ -42,6 +42,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       var scopes = 'https://www.googleapis.com/auth/plus.me';
 
+      var person = {};
+
+      alert(person.name);
+
       function handleClientLoad() {
         // Step 2: Reference the API key
         gapi.client.setApiKey(apiKey);
@@ -95,13 +99,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             output.appendChild(heading);
             output.appendChild(title);
             output.appendChild(company);
+
+            var person = {
+            	name: resp.desiplayName,
+            	title: resp.occupation,
+            	description: resp.organizations[0].name
+            };
             
+            alert(person.name);
 
             var data = document.createElement("div");
             //data.appendChild(document.createTextNode(JSON.stringify(resp)));
 
             document.getElementById('content').appendChild(output);
             document.getElementById('content').appendChild(data);
+
           });
         });
       }
