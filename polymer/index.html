@@ -34,6 +34,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  	<button id="authorize-button" style="visibility: hidden">Authorize</button>
     <div id="content"></div>
 
+    name: {{person.name}}
+
     <script type="text/javascript">
 
       var clientId = '938814055426-vrvl49edh26kqv5qp2q5jkj4hg76i9gm.apps.googleusercontent.com';
@@ -100,7 +102,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             output.appendChild(company);
 
             person = {
-            	name: resp.desiplayName,
+            	name: resp.displayName,
             	title: resp.occupation,
             	description: resp.organizations[0].name
             };
