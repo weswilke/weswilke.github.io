@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	var video = document.getElementById('sourcevid');
 
 	// Replace the source of the video element with the stream from the camera
-	if (navigator.getUserMedia) {
+	if (navigator.getUserMedia) { alert('hi');
 		navigator.getUserMedia('video', successCallback, errorCallback);
 		// Below is the latest syntax. Using the old syntax for the time being for backwards compatibility.
 		// navigator.getUserMedia({video: true}, successCallback, errorCallback);
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			console.error('An error occurred: [CODE ' + error.code + ']');
 			return;
 		}
-	} else {
+	} else { alert('bye');
 		console.log('Native web camera streaming (getUserMedia) is not supported in this browser.');
 		return;
 	}
